@@ -1,0 +1,119 @@
+/* src/styles/navbar.css */
+.navbar {
+  background: #000;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  flex-shrink: 0;
+}
+
+.navbar-logo {
+  color: var(--green);
+  font-size: 17px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon { font-size: 20px; }
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  line-height: 1;
+}
+
+.back-btn {
+  color: var(--muted);
+  font-size: 12px;
+  border: 1px solid #444;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.back-btn:hover { border-color: var(--green); color: var(--green); }
+
+.user-pill {
+  background: #1a1a1a;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+}
+
+.user-pill-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+
+.role-tag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+.role-tag.user   { color: var(--green);  background: #1a3a1a; }
+.role-tag.artist { color: var(--purple); background: #2a2040; }
+
+.logout-btn {
+  color: var(--muted);
+  font-size: 12px;
+  border: 1px solid #444;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.logout-btn:hover { border-color: #e05555; color: #e05555; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .navbar { padding: 0 14px; }
+  .hamburger { display: flex; align-items: center; }
+  .user-pill { display: none; }
+}
+
+@media (max-width: 480px) {
+  .back-btn { padding: 5px 10px; font-size: 11px; }
+  .logout-btn { padding: 5px 10px; font-size: 11px; }
+}

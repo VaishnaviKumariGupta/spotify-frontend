@@ -1,0 +1,106 @@
+/* src/styles/album.css */
+.album-page {
+  background: var(--black);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.album-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.album-cover-big {
+  width: 100px;
+  height: 100px;
+  background: #282828;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  flex-shrink: 0;
+}
+
+.album-meta-label {
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.album-meta-title { color: var(--text); font-size: 22px; font-weight: 700; }
+.album-meta-sub   { color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+.track-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--card);
+  margin-bottom: 6px;
+  border: 1.5px solid transparent;
+  transition: all 0.15s;
+}
+.track-row:hover   { background: #222; }
+.track-row.playing { border-color: var(--green); }
+
+.track-number {
+  color: var(--hint);
+  font-size: 13px;
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.track-thumb {
+  width: 40px; height: 40px;
+  background: #282828;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.track-info { flex: 1; min-width: 0; }
+
+.track-title {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.track-title.active { color: var(--green); }
+
+.track-artist {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.track-duration { color: var(--muted); font-size: 12px; flex-shrink: 0; }
+
+@media (max-width: 600px) {
+  .album-cover-big { width: 70px; height: 70px; font-size: 32px; }
+  .album-meta-title { font-size: 17px; }
+  .album-header { gap: 14px; padding: 14px; }
+}
+
+@media (max-width: 480px) {
+  .track-number   { display: none; }
+  .track-duration { display: none; }
+}

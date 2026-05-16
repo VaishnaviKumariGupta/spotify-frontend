@@ -1,0 +1,182 @@
+/* src/styles/player.css */
+.music-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #181818;
+  border-top: 1px solid #282828;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 16px;
+  height: 80px;
+  box-sizing: border-box;
+}
+
+/* Song Info — left */
+.player-info {
+  flex: 0 0 180px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.player-title {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-artist {
+  color: #b3b3b3;
+  font-size: 11px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Center — controls + progress */
+.player-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.player-btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.player-play {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.1s;
+  flex-shrink: 0;
+}
+.player-play:hover { background: #1DB954; transform: scale(1.05); }
+
+.player-skip {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.15s;
+}
+.player-skip:hover { color: #fff; }
+
+.player-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.player-time {
+  color: #b3b3b3;
+  font-size: 10px;
+  min-width: 32px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.player-range {
+  flex: 1;
+  accent-color: #1DB954;
+  cursor: pointer;
+  min-width: 0;
+  height: 4px;
+}
+
+/* Volume — right */
+.player-vol {
+  flex: 0 0 120px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end;
+  font-size: 16px;
+}
+
+.player-vol .player-range {
+  width: 72px;
+  flex: none;
+}
+
+/* ── TABLET (601px - 768px) ── */
+@media (max-width: 768px) {
+  .music-player {
+    height: 72px;
+    padding: 0 14px;
+    gap: 12px;
+  }
+
+  .player-info { flex: 0 0 140px; }
+  .player-vol  { display: none; }
+}
+
+/* ── MOBILE (max 600px) ── 
+   Full player — same as desktop, just smaller 
+*/
+@media (max-width: 600px) {
+  .music-player {
+    height: auto;
+    min-height: 68px;
+    padding: 8px 12px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* Row 1: song info + play button side by side */
+  .player-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .player-center {
+    flex: 0 0 auto;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    order: 2;
+  }
+
+  /* Hide skip on mobile, keep play */
+  .player-skip { display: none; }
+
+  .player-play {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  /* Row 2: full-width progress bar */
+  .player-progress {
+    flex: 0 0 100%;
+    order: 3;
+    padding-bottom: 4px;
+  }
+
+  .player-vol { display: none; }
+
+  .player-btns { gap: 0; }
+}

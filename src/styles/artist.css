@@ -1,0 +1,218 @@
+/* src/styles/artist.css */
+
+/* ── Upload Card ── */
+.upload-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  max-width: 580px;
+}
+
+.upload-card-title {
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.artist-label {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.artist-input {
+  display: block;
+  width: 100%;
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  padding: 11px 14px;
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.artist-input:focus { border-color: var(--green); }
+
+/* ── File Drop ── */
+.file-drop {
+  border: 2px dashed #3a3a3a;
+  border-radius: 10px;
+  padding: 28px 20px;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.file-drop:hover  { border-color: var(--green); background: #1a2a1a; }
+.file-drop.has-file { border-color: var(--green); background: #1a2a1a; }
+
+.drop-icon { font-size: 32px; display: block; margin-bottom: 8px; }
+.drop-text { color: var(--muted); font-size: 13px; margin: 0; }
+.drop-hint { color: var(--hint); font-size: 11px; margin: 4px 0 0; }
+
+/* ── Action Button ── */
+.action-btn {
+  width: 100%;
+  background: var(--green);
+  color: #000;
+  border: none;
+  padding: 13px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s, transform 0.1s;
+  margin-top: 4px;
+}
+.action-btn:hover    { opacity: 0.9; }
+.action-btn:active   { transform: scale(0.98); }
+.action-btn:disabled { background: var(--green-dark); color: #555; cursor: not-allowed; }
+
+/* ── Song Picker ── */
+.song-picker-list {
+  background: #222;
+  border-radius: 8px;
+  padding: 6px;
+  max-height: 220px;
+  overflow-y: auto;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #2a2a2a;
+}
+
+.song-pick-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.12s;
+  user-select: none;
+}
+.song-pick-row:hover    { background: #2a2a2a; }
+.song-pick-row.selected { background: #1a3a1a; }
+
+.song-pick-row input[type="checkbox"] {
+  accent-color: var(--green);
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.song-pick-name {
+  flex: 1;
+  color: var(--text);
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.selected-count {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 8px 0 14px;
+}
+
+.picker-msg {
+  color: var(--hint);
+  font-size: 13px;
+  padding: 16px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ── Dashboard ── */
+.dashboard-hero {
+  text-align: center;
+  padding: 28px 20px 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.dashboard-avatar { font-size: 52px; margin-bottom: 10px; }
+
+.dashboard-name {
+  color: var(--text);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.dashboard-sub { color: var(--muted); font-size: 14px; }
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-icon  { font-size: 28px; }
+.stat-num   { color: var(--green); font-size: 30px; font-weight: 700; }
+.stat-label { color: var(--muted); font-size: 12px; }
+
+.dashboard-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dash-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: opacity 0.2s, transform 0.1s;
+  width: 100%;
+  text-align: left;
+}
+.dash-action-btn:hover  { opacity: 0.85; transform: translateY(-1px); }
+.dash-action-btn.green  { background: var(--green);  color: #000; }
+.dash-action-btn.purple { background: var(--purple); color: #fff; }
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .upload-card       { padding: 16px; }
+  .upload-card-title { font-size: 15px; }
+  .dashboard-stats   { gap: 10px; }
+  .stat-card         { padding: 14px; }
+  .stat-num          { font-size: 24px; }
+}

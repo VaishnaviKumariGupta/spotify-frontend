@@ -1,0 +1,32 @@
+/* src/styles/home.css */
+.home-page {
+  background: var(--black);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-heading {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-heading .icon { color: var(--green); }
+
+.music-list { margin-bottom: 8px; }
+
+.empty-state {
+  color: var(--muted);
+  font-size: 14px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .section-heading { font-size: 17px; }
+}
