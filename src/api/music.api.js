@@ -1,8 +1,10 @@
 // src/api/music.api.js
 import axios from 'axios'
 
+const BASE_URL = import.meta.env.VITE_API_URL || ''
+
 const api = axios.create({
-  baseURL: '/api/music',
+  baseURL: `${BASE_URL}/api/music`,
   withCredentials: true
 })
 
